@@ -1,5 +1,9 @@
 # tractor_sim
-Package for simulating the Olin Robotics Lab Autonomous Tractor. For further project information, see the GRAVL main repository wiki: ([link](https://github.com/olinrobotics/gravl/wiki))
+
+![Build - noetic](https://img.shields.io/:Build-noetic-yellowgreen.svg)
+[![license - Apache-2.0](https://img.shields.io/:license-Apache2.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0)
+
+Package for simulating the Autonomous Tractor. For further project information, see the GRAVL main repository wiki: ([link](https://github.com/olinrobotics/gravl/wiki))
 
 ## Setup
 Dependencies:
@@ -9,16 +13,27 @@ Dependencies:
 + [velodyne_simulator](https://bitbucket.org/DataspeedInc/velodyne_simulator/src/master/) - packages for simulated 3D lidar
 
 Installation:
-+ `cd ~/catkin_ws/src`
-+ `git clone https://github.com/olinrobotics/tractor_sim.git`
-+ `cd ..`
-+ `rosdep install -iry --from-paths src`
-+ `cd ~/catkin_ws/`
-+ `catkin_make`
+```bash
+cd ~/catkin_ws/src
+git clone https://github.com/SNU-SF4/tracktor_sim
+git clone https://github.com/SNU-SF4/gravl.git
+git clone https://github.com/SNU-SF4/state_controller.git
+
+# install essential packages
+sudo apt install ros-noetic-ackermann-msgs ros-noetic-mavros-msgs ros-noetic-gps-common 
+
+# install velodyne related packages
+sudo apt install ros-noetic-velodyne-description ros-noetic-velodyne-gazebo-plugins ros-noetic-velodyne-simulator
+
+cd ~/catkin_ws/
+catkin build
+```
 
 To use the models included in this repo, copy the contents of the folder to `~/.gazebo/models`
-+ `cd ~/catkin_ws/src/tractor_sim/tractor_sim_gazebo/models`
-+ `cp -R . ~/.gazebo/models`
+```bash
+cd ~/catkin_ws/src/tractor_sim/tractor_sim_gazebo/models
+cp -R . ~/.gazebo/models
+```
 
 ## Usage
 To run simulation:
