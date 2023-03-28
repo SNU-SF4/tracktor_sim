@@ -20,7 +20,8 @@ git clone https://github.com/SNU-SF4/gravl.git
 git clone https://github.com/SNU-SF4/state_controller.git
 
 # install essential packages
-sudo apt install ros-noetic-ackermann-msgs ros-noetic-mavros-msgs ros-noetic-gps-common 
+rosdep install --from-paths src --ignore-src -r -y --os=ubuntu:focal
+sudo apt install ros-noetic-ackermann-msgs ros-noetic-mavros-msgs ros-noetic-gps-common
 
 # install velodyne related packages
 sudo apt install ros-noetic-velodyne-description ros-noetic-velodyne-gazebo-plugins ros-noetic-velodyne-simulator
