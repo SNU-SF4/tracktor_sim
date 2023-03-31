@@ -15,7 +15,7 @@ Dependencies:
 Installation:
 ```bash
 cd ~/catkin_ws/src
-git clone https://github.com/SNU-SF4/tracktor_sim
+git clone https://github.com/SNU-SF4/tractor_sim
 git clone https://github.com/SNU-SF4/gravl.git
 git clone https://github.com/SNU-SF4/state_controller.git
 
